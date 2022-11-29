@@ -1,10 +1,24 @@
-- name: Rendering data to html
+- name: Jaminco pipeline to refresh data
   hosts: localhost
   tasks:
 
-  - include_vars: result.yaml
+  - include_vars: ../result.yaml
 
   - name: "Génération du HTML"
     template:
       src: template.j2
-      dest: "template.html"
+      dest: /home/ralph/git_repos/pat_for_Jaminco/jaminco.html
+
+  - name: "Déplacement du fichier dans le dossier web" 
+    copy:
+      src: /home/ralph/git_repos/pat_for_Jaminco/jaminco.html
+      dest: /var/www/blackplatform.ovh/jaminco.html
+
+  - name: "Application du nouveau contexte SELinux"
+    command: restorecon -irv /var/www/blackplatform.ovh/jaminco.html
+
+  - name: Restart service httpd, in all cases
+    become: true
+    ansible.builtin.service:
+      name: nginx
+      state: restarted
