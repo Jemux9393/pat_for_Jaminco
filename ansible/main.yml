@@ -1,0 +1,10 @@
+- name: Rendering data to html
+  hosts: localhost
+  tasks:
+
+  - include_vars: result.yaml
+
+  - name: "Génération du HTML"
+    template:
+      src: template.j2
+      dest: "template.html"

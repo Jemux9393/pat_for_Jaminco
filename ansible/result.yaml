@@ -1,0 +1,29 @@
+livres:
+  9782809454659:
+    name: "Captain America Tome 2 - Ed Brubaker,Steve Epting,Mike Perkins,Lee Weeks"
+    ean: "9782809454659"
+    disponiblity: "Non disponible"
+  9782809442076:
+    name: "Elektra - Frank Miller,Bill Sienkiewicz"
+    ean: "9782809442076"
+    disponiblity: "Non disponible"
+  9782809491517:
+    name: "X-Men/Avengers Onslaught - Scott Lobdell,Jeph Loeb,Mark Waid,Terry Kavanagh"
+    ean: "9782809491517"
+    disponiblity: "Disponible"
+  9782809496376:
+    name: "Ultimate Spider-Man Tome 1 Pouvoirs et responsabilités - Brian Michael Bendis,Mark Bagley,Art Thibert"
+    ean: "9782809496376"
+    disponiblity: "Disponible"
+  9782384140015:
+    name: "Cobra The Space Pirate Tome 14 Rugball - Terasawa Buichi"
+    ean: "9782384140015"
+    disponiblity: "Non disponible"
+  9782809474916:
+    name: "Captain America Tome 4 - Ed Brubaker,Bryan Hitch"
+    ean: "9782809474916"
+    disponiblity: "Non disponible"
+  9782809491098:
+    name: "X-Men  L'ère d'apocalypse - Scott Lobdell,Mark Waid,Fabian Nicieza,Joe Madureira"
+    ean: "9782809491098"
+    disponiblity: "Disponible"
