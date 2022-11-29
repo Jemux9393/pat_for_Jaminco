@@ -5,8 +5,7 @@
         do
             filename=${ean}.html
             curl -Ls https://www.decitre.fr/rechercher/result?q=$ean > $filename
-            # A cause des apostrophes encodées...
-            sed -i "s|&#039;|\'|g" $filename
+            decode_encoded_char
             book_name=$(awk -F"\"" '/og:title/ { print $4}' $filename)
             check_soldout=$(grep 'En stock en ligne' $filename )
             if [[ -z $check_soldout ]]
@@ -24,3 +23,10 @@
                     echo "    disponiblity: \"Disponible\"" >> result.yaml
             fi             
     done
+
+function decode_encoded_char () {
+
+    # Remplacement apostrophe
+    sed -i "s|&#039;|\'|g" $filename
+
+}
