@@ -10,14 +10,17 @@
             book_name=$(awk -F"\"" '/og:title/ { print $4}' $filename)
             check_soldout=$(grep 'En stock en ligne' $filename )
             if [[ -z $check_soldout ]]
-                then    
-                    echo "      name: \"$book_name\""
-                    echo "      ean: \"$ean\""                    
-                    echo "      disponiblity: \"Non disponible\""
+                then
+                    if [[ "$counter" -lt 1 ]]; then counter=$((counter+1)); echo "livres:" >> result.yaml; fi                
+                    echo "  $ean:" >> result.yaml                      
+                    echo "    name: \"$book_name\"" >> result.yaml
+                    echo "    ean: \"$ean\"" >> result.yaml>> result.yaml              
+                    echo "    disponiblity: \"Non disponible\"" >> result.yaml
                 else
-                    echo "      name: \"$book_name\""
-                    echo "      ean: \"$ean\""                        
-                    echo "      disponiblity: \"Disponible\""
-            fi
-            echo -e "\n###   ~~~ ###   ~~~  ###   ~~~ ###    "                  
+                    if [[ "$counter" -lt 1 ]]; then counter=$((counter+1)); echo "livres:" >> result.yaml; fi                
+                    echo "  $ean:" >> result.yaml  
+                    echo "    name: \"$book_name\"" >> result.yaml
+                    echo "    ean: \"$ean\"" >> result.yaml                        
+                    echo "    disponiblity: \"Disponible\"" >> result.yaml
+            fi             
     done
