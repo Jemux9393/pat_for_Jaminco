@@ -13,4 +13,4 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: bash /home/ralph/test.sh
+        script: bash /home/ralph/git_repos/pat_for_Jaminco/script.sh
